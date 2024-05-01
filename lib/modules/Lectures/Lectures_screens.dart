@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobileapp/modules/lectures_details/chapter1_details.dart';
 import 'package:mobileapp/modules/lectures_details/chapter2_details.dart';
+import 'package:mobileapp/modules/lectures_details/chapter3_details.dart';
+import 'package:mobileapp/modules/lectures_details/chapter4_details.dart';
 import 'package:mobileapp/shared/Cubit/Cubit.dart';
 import 'package:mobileapp/shared/Cubit/States.dart';
 import 'package:mobileapp/shared/component/Components.dart';
@@ -58,6 +60,46 @@ class LecturesScreen extends StatelessWidget {
                               color: Colors.black,
                               borderRadius: BorderRadius.circular(15),
                               border: Border.all(width: 3)
+                          ),
+                        ),
+                      ),
+                    )
+                  ],),
+                SizedBox(height: 15,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: InkWell(
+                        onTap: (){
+                          NavigateReplacement(context, Chapter3DetailsScreen());
+                        },
+                        child: Container(
+                          width: 250,
+                          height: 170,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(image: AssetImage('assets/images/ch3.png',),fit: BoxFit.fill) ,
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(15),
+                              border: Border.all(width: 3,)
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10,),
+                    Expanded(
+                      child: InkWell(
+                        onTap: (){
+                          NavigateReplacement(context, Chapter4DetailsScreen());
+                        },
+                        child: Container(
+                          width: 250,
+                          height: 170,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(image: AssetImage('assets/images/ch4.png'),fit: BoxFit.fill),
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(15),
+                              border: Border.all(width: 4)
                           ),
                         ),
                       ),

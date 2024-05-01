@@ -99,8 +99,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           Text('8- Integration with Device Features',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),maxLines: 1),
         ]
         ,),
-    )
+    ),
   ];
+  
   void sumbit() {
    NavigateAndFinish(context, MobileApp());
   }
@@ -117,7 +118,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             child: TextButton(
                 onPressed: sumbit,
                 child: const Text('Skip', style: TextStyle(fontSize: 20),)),
-          )
+          ),
         ],
       ),
       body: Padding(

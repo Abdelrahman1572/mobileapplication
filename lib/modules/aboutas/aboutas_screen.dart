@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mobileapp/shared/component/Components.dart';
 
 class AboutAsModel {
   final String image;
@@ -52,33 +51,68 @@ class AboutAsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.separated(
-        shrinkWrap: true,
-        physics: BouncingScrollPhysics(),
-        itemBuilder: (context, index) => buildTeamData(teamData[index]),
-        separatorBuilder: (context, index) => SizedBox(
-          height: 10,
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('About Application',
+                style: TextStyle(
+                    fontSize: 26,
+                    color: Colors.blueGrey,
+                    fontWeight: FontWeight.w500)),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              'This Application will be used to manage the Mobile Programming using Flutter course by deviding the course\'s book into organized sections and it\'s Questions for students to access and use.',
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyLarge!
+                  .copyWith(fontSize: 20, height: 1.45),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            const Text('Team Members',
+                style: TextStyle(
+                    fontSize: 26,
+                    color: Colors.blueGrey,
+                    fontWeight: FontWeight.w500)),
+            const SizedBox(
+              height: 10,
+            ),
+            Expanded(
+              child: ListView.separated(
+                shrinkWrap: true,
+                physics: BouncingScrollPhysics(),
+                itemBuilder: (context, index) => buildTeamData(teamData[index]),
+                separatorBuilder: (context, index) => SizedBox(
+                  height: 10,
+                ),
+                itemCount: teamData.length,
+              ),
+            )
+          ],
         ),
-        itemCount: teamData.length,
       ),
     );
   }
 }
 
 Widget buildTeamData(AboutAsModel model) => Padding(
-      padding: const EdgeInsets.all(15.0),
-      child: Row(
-        children: [
-          CircleAvatar(
-            radius: 40,
-            backgroundImage: AssetImage(model.image),
-          ),
-          const SizedBox(
-            width: 15,
-          ),
-          Text(model.name, style: TextStyle(fontSize: 20,height: 0.5), textAlign: TextAlign.center),
-        ],
-      )
-    );
-
-
+    padding: const EdgeInsets.all(8.0),
+    child: Row(
+      children: [
+        CircleAvatar(
+          radius: 40,
+          backgroundImage: AssetImage(model.image),
+        ),
+        const SizedBox(
+          width: 15,
+        ),
+        Text(model.name,
+            style: TextStyle(fontSize: 20, height: 0.5),
+            textAlign: TextAlign.center),
+      ],
+    ));

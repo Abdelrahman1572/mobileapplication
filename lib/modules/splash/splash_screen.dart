@@ -7,6 +7,8 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     return EasySplashScreen(
         logo: Image.asset(
           'assets/images/Splash-removebg.png',
@@ -19,7 +21,7 @@ class SplashScreen extends StatelessWidget {
         ]),
         title: Text(
           'Mobile Programming',
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold,color: Colors.white,height: -3.5,wordSpacing: 5),
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold,color: Colors.white,wordSpacing: 5,height: -3.5),
         ),
         showLoader: true,
         loaderColor: Colors.white,
@@ -28,7 +30,7 @@ class SplashScreen extends StatelessWidget {
         loadingText: Text("Loading...",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.white)),
         navigator: OnBoardingScreen(),
-        durationInSeconds: 5,
+        durationInSeconds: 3,
     );
   }
 }
